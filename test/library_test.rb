@@ -32,5 +32,11 @@ class LibraryTest < Minitest::Test
     refute dpl.include?("A Connecticut Yankee in King Arthur's Court")
 
     assert_equal [jane_eyre, villette, mockingbird], dpl.card_catalogue
+
+    expected1 = {"Jane Eyre" => jane_eyre, "Villette"  => villette}
+    expected2 = {"To Kill a Mockingbird" => mockingbird}
+
+    assert_equal expected1, dpl.find_by_author("Charlotte Bronte")
+    assert_equal expected2, dpl.find_by_publication_date("1960")
   end
 end
