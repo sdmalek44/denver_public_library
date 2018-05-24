@@ -10,7 +10,9 @@ class Author
   end
 
   def add_book(title, date)
-    @books << Book.new({author_first_name: @first_name, author_last_name: @last_name,
+    new_book = Book.new({author_first_name: @first_name, author_last_name: @last_name,
        title: title, publication_date: date})
+    @books << new_book
+    return new_book
   end
 end
