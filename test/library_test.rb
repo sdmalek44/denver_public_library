@@ -27,5 +27,10 @@ class LibraryTest < Minitest::Test
     dpl.add_to_collection(mockingbird)
     dpl.add_to_collection(villette)
     assert_equal [jane_eyre, mockingbird, villette], dpl.books
+
+    assert dpl.include?("To Kill a Mockingbird")
+    refute dpl.include?("A Connecticut Yankee in King Arthur's Court")
+
+    dpl.card_catalogue
   end
 end
