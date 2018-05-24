@@ -31,6 +31,6 @@ class LibraryTest < Minitest::Test
     assert dpl.include?("To Kill a Mockingbird")
     refute dpl.include?("A Connecticut Yankee in King Arthur's Court")
 
-    dpl.card_catalogue
+    assert_equal [jane_eyre, villette, mockingbird], dpl.card_catalogue
   end
 end
